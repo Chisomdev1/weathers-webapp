@@ -270,13 +270,5 @@ input:checked + .slider:before {
 }
 
 @media only screen and (max-width: 768px) { /* Adjust the breakpoint as needed */
-    .second-row {
-      margin-left: 50px !important;
-    }
-    .info-box{
-        margin-left: 9px !important; 
-    }
-    .forecast-box{
-        margin-top: 40px !important;
-    }
+    
   }
