@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+        integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.min.css">
+    <script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+
+    
+</head>
+
+<body class="body dark-mode">
+    <div class="container">
+        <div class="row search-info mb-4 mt-4">
+            <div class="col-lg-1 col-2 col-sm-1 d-flex flex-column align-items-left toggle-container">
+                <label class="switch mb-2">
+                    <input type="checkbox" id="modeToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="modeLabel"></span>
+            </div>
+            <div class="col-lg-8 col-md-11 col-10 mb-2">
+                <input type="search" class="forms" placeholder="Search for your preferred city">
+            </div>
+            <div class="col-lg-3 col-md-12  col-12 ">
+                <button class="btn">
+                    <svg width="35" height="35" class="current-btn" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <rect width="30" height="30" fill="url(#pattern0_17_275)"/>
+                        <defs>
+                            <pattern id="pattern0_17_275" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_17_275" transform="scale(0.0151515)"/>
+                            </pattern>
+                            <image id="image0_17_275" width="66" height="66" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE9klEQVR4nO2ca4hVVRTHf3PnRnStCLO3VghCWJGG9CAfQ1GovSDpYUFlBkF96EFlD8QeSESR0of62ocKsgzCz5aIQilmamn2mDIa0zC8zURONTmxaW1YbPY9s/c599xzxnv+sGDmzt5rrb3O2Xuv1x2oUBrUhLoaS4BB4HfgHroUE4BhYFTI/NygCzFNGcGS+azrMK0yxP+oDCGoDNHthjgO6AOuCDDEZcBVQC/H0OLvANYATVnsigBDrJDfDwHvAIvGq1FOBB4G9nkWG2MITT8IT+N/jAvcBhzwLOQf4GPgmgBDXA18Aox4xuyXN6S0OBv4yKP45+I+T0xxWJ4K3Afs8IxdC5xJyTATGHAU3QosAHracGsYHjcA25zxPwMzKAkWAkNKuT+BxwMOt/M8hjCfJaEOPAUcUXMGxeCFYoHsfavUd8AFgXNN6L1Hzd2d8Pa4uBD43jl/zAMpBDPkaVhlPgVOj+QxGVgldE7k3DOALUr+kGzRjuIs50z4rKBrbYLItnoMiG4dw1olvF+eTlGYBHyj9FnXKcGLlFBzaE2neEx3DtBb8xbYEIfGClyWko85KOcCLwBvCT0PzM6Qv3xS6XVAvNvc8JAStk2us1hcC3zpuTot7VLeZwx6xXexfB5JwSNYkL6ybiQejwH/JhjB0kjKhSxUPH6UoC/Xs2FHxJ1vsRg4GmAES0dT7HWj03bF43ZywNtKwNLIuacAv7V48rtkq/gCrF+BkyNl3avmv0cO2+KQUt5cWTF4wrPITcD5asxUYLNn3KORsiYqb/dwu7fHbKXYxhTzNzqL+0UiSxfGwAedsSYcj8V6Nd9kxdqGS+WqXJaSsbu4NxLGvumMNdd1LOYqfWdRIvzhLG55wtjlzlgTzxTiu0+NoHMDbw/XbzAJnFZY54z9IoB/TXSJ0b2RVJAdjrjeLH0tUWQSXvdcjdd5xs33XLGvjcF7CrA3hd7DvsJzTSrSoynJhNFJ6PPM+QtYKQfxHOAl4G/POPP3JKzOoHfTdelrGQ0x1lMz2+erFHx3MjZWtdMQyGuSZmvsDkyqPJiC9wMBfCc7ma5QMtHq3a2YNnI6LA1OinzrmhERZE87D8tO4JUIQ7xMCTFLOSjzMvA5zcl4t6LBFG68xry8HKq+jC6vxsoAQ7yYUcaGvFzsugQwaYMuNxI9PMbZ4FbFYjBJBV3NPHISa5SyJtTNgmcTDPF0Rt735xmGI+V9K2B7isSMxgktKuX75G9p0SP5jVwTM3VJf1khWctsd3kMcWdGnjcrXj/llapD8ohW0NaMzRs9kpyx/DZnfMvqTpout+Qt4uDo3geTecoCk5x5VfyLLAekwTOdTOfbRhBd+S5DgediJzwwOnYEH5ao5GectG+LKPnZ7piyFIF1UWdAdOsoZjptAVtSvBlTJJ+wOiC5E9IWYHKrpWgU6QcuCpxbczJLeyIbRfrV3BFpLSoU8503Y1i8w3qHWoeGymAEi0ukscvtprupjc1k13uayfYXuR1awbT6fdAi3bbUE6iFthcukUz2qCcT3vGDMQa3OD0Ueh9viGg4Xe+cP5YO5hVD5IHjJR+4t40tyKZM+JyE8eMOvdJO8K6qhscYwuQT3pfIN7cAqgijzAEuDzDElbI9jpnFJ6Frv7jiojKEoDKEoDKEoDKEoOEkU45061eibeG5KdSyINstqFX/NoHy4D9e/P+0/AvEkwAAAABJRU5ErkJggg=="/>
+                        </defs>
+                    </svg>Current Location
+                </button>
+            </div>
+        </div>        
+        
+        <div class="row first-row text-center align-items-center">
+            <div class="time-box col-sm-4 col-12">
+                <h2 class="searched-country">Athens</h2>
+                <h1 class="searched-time">09:03</h1>
+                <p class="searched-date">Sunday, 18 August</p>
+            </div>
+            <div class="info-box text-center col-sm-7 col-12">
+                <div class="row">
+                    <div class="condition-status col-sm-4">
+                        <h1 class="temperature">24<span class="degrees-celsius">°C</span></h1>
+                        <p>Feels like: 22<span class="degrees-celsius-2">°C</span></p>
+                       <div class="row sunset-info">
+                        <div class="mb-5 col-lg-12 col-sm-6 col-6">
+                            <svg class="svg-icon" width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="48" height="48" fill="url(#pattern0_17_245)"/>
+                                <text x="60" y="20" font-size="16" class="sun-info-text">Sunset</text>
+                                <text x="60" y="40" font-size="16" class="sun-info-text">06:02</text>
+                                <defs>
+                                    <pattern id="pattern0_17_245" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_17_245" transform="scale(0.02)"/>
+                                    </pattern>
+                                    <image id="image0_17_245" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/ElEQVR4nO2Zyy4EQRSGi5hERGJjxCMgHoGNy4aFxCOI64zL0tblDXgE8SBYiEjcFtiwIhIbK+zmk2NOJ63NjKmZbqqkvqSTTlfXOf8/daqqM2VMxgArchmfAdaAEmXWjY8ACzET6P2q8QnK5VSqYKTkTZkB8zHRUloRi96YAeZiYj/LKHKRKDe5lo0vJpJGKozYsssmiom2L0b0WTH2/pxxBeBRRRUqtH0zos8L2ufBuAIwDIxWaatoRNtGpa/xAWoY8QqCEccII+IaYURcI4yIa/ynETkCDv9aRyAQCAT8BDgATo3v8I929k+M76AY38E1I0AXkPstI0Ab0GHb76egncALcAHkszYC5IEz4BlotxZcI3AOOFdNVzZmbD/jKZuQHKiZtoaF15HgBuhNNcH3HNdZ5MjczK+ZqJLwIo0alhgay7p00zAjid+SSYFW/Zd9R+fHk05aud8FRuSdRJ8e4L2RxcSk9Ct2J56NA5f8jAgeS/TtTnWFagSgBdiMneLKCrcE9MleoFe/Hu5EJSTvbkhf4wrAtop7BWZqiVPTs1qWwpZxAWAyZmLI8pQrMjORrcr6Nsp7FTPbQH854RXuUt/4bACmY3PCuta1zKI5M2X+CmBfRRSaiCFH1cJeuursRNyqiIEmYgxqjOtmxURD6zPHYkS+MH3n5AOmbkN4s1cmDwAAAABJRU5ErkJggg=="/>
+                                </defs>
+                            </svg>
+                            
+                        </div>
+                        <div class="col-lg-12 col-sm-7 col-6 ">
+                            <svg class="svg-icon" width="200" height="49" viewBox="0 0 200 49" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect y="0.333374" width="48" height="48" fill="url(#pattern0_17_240)"/>
+                                <text x="60" y="20" font-size="16" class="sun-info-text">Sunset</text>
+                                <text x="60" y="40" font-size="16" class="sun-info-text">06:02</text>
+                                <defs>
+                                    <pattern id="pattern0_17_240" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                        <use xlink:href="#image0_17_240" transform="scale(0.02)"/>
+                                    </pattern>
+                                    <image id="image0_17_240" width="50" height="50" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB70lEQVR4nO2Zyy4EQRSGi5CISGwQj4B4BERcNiwkHkFmiLsdS5c34BHEg2AhInFNsGElkdhYYeeTE6eltJiZmummKqkv6WQyOafO/0+d6uqpNiZngH3gxIQOigkdohHPiDPiG3FGfCPOiG8ENSNALzDoagQYBgaMLwBXwDswV6kRidWcB+MLQEFFyTVfzojEWPFF4xNA0RK39JsRYMaKWzA+wnczy2kjQZhIAKZVqLCWGAFWLBOLJgSARUt0QlgmEqw2so18rZ2gAJYtM6smZPhss7DaKRKJRCLeEM9+fSOo/+yliEbyAmgFGv+qtYAGoNk1r9ygLcAzcA60520EaAdOgSegyVlwiYEbgTPVdOliBjgEDhxNXGotMdNQtfAKCtwAnZkW+FnjOo8auZv5MxO/FDzPoodlDB3LuXWzMCOFX9NFgXo9093W9fGoi1Y+7wBDEpPK6QDeqrmZmIx+xbbUd6PABeURwSOp3LZM71DVANQBG9aJidzhZoEu2Qv06taD66SFJHZdco0vAFsq7gWYKiVOTRe0LYVN4wPAuGWizyGv3zIzlq/KyjbKexVTqPKcWLjLfONzAZi01oRzr2ubJWtmwvwXwJ6KmKthDHnpI+xmq85NxK2K6Knx/aNwXauYZGpD5kiMyBNm6Bx/ACrUQ216v8tzAAAAAElFTkSuQmCC"/>
+                                </defs>
+                            </svg>
+                            
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-3">
+                        <img src="image/sun-svgrepo-com (2).svg" class="img-sun">
+                            <h3>Sunny</h3>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-6">
+                        <svg width="60" height="51" class="img-status svg-icon" viewBox="0 0 60 51" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="60" height="50.1266" fill="url(#pattern0_17_227)"/>
+                            <defs>
+                              <pattern id="pattern0_17_227" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#image0_17_227" transform="scale(0.0126582 0.0151515)"/>
+                              </pattern>
+                              <image id="image0_17_227" width="79" height="66" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE8AAABCCAYAAAAWqotYAAAAAXNSR0IArs4c6QAABhVJREFUeAHtm/1xozgYh+0Klg6iDpYOTh3YHZgO1h04HcQdmFQQtoKQCkIqMKlgSQV7z88n5WQMGIj35v7Qb+aJvt4P6TXszYi55W+0WCxKkEr4uVwuKw3mipAG3xVYSCB1reI2oLYkz0/a2SJPgrPPY+h7avqekr7OpLyzRS6fJyWI8n4smOzSkckfYMZmwzaBDTzDWP3C8AG0odHCfgUHmKIDxirAaGGfgvanfbZVLpm5J5p1Ef9ybdgUDETnr4e/NrR2JLSh3hg0ULk2pZWN2m8QSjY5PHY9JeSRzwbWYCDUO4M6wND33NEPVTMoQHmU80zkSZhQngxSCPXBQD4NFOGCnkI9PVuooE/PLIiuX4Pp3zXswZwFbw1Yz6CAPr2y8AxH6FLDZA62FfpsqHVnJ/su6RzPoHx90j6zs8BDA4xT2IOKcU3amA6yHorZtYaPgS1UMEYFRhkkXfH65mTv/OQ/Rjr3FkxfzGXfQjhPAMtYSPb099/Ht2Ksf/wbNz+7IU+KswUVRn21dYDyaPwluYJYgpiAhn4FapVH/ahYgViBWIFYgViBWIFYgViBWIFYgViBWIFYgViBWIHuCugyVBeg77e4rehKQfyE+e9u7eNP3la4s5xSkeelaz+3mHO3MsmCTqgjgwcwc5Pgq3uzDQxdLuoC8gDp3Dzyw38FTzAkrU+6fm/vCf8UDqB9e5Xt4vkFta+wAT05V4XdCrTRqTrisANzNQkG2HUdhOmr0sEPMOoHw87ADzhCl07fMCx7Mg719Rq3lTNRQg3v0IBeRRXWQgbtIssuB9lWIMkmdXQ9DSVrBcj+9Iqza78fy1wGBkLpu0IODZTgZekYWMM3CFUzyKGEhV5x8qR0ZafWgvza0te+CmrX0gQiiCp+DzVMVYNDDtrAoLDR651BBXNU4NR1wIu8sgPZz5H2t4XkIvDQBA4WVIwGhqSNZUOxhtbwNbCHGoZUsbiFaQdxyeXn/BVnSNrHHgYfguXQocI1AhnGHm2+gubW//Ukj2Jr074t6evVOrXq30rksi6W2tN51JKrcfOxiRWIFYgViBWIFYgViBWIFYgViBWIFYgViBWIFYgV6K6AvmHsWNItgm4VbvaNwd3C3BHTOGhOKvVXF5Cn0Rf/uFsYfzGbBuF0Hp3r7Va3JORSfF2YWnhfMNHWKxO6fk4wmCz8NvAE13TE4AHM5CQ44GfhAL9gSFo/gJ2Zx+C7gyOEGvyGIUMVYXUtKTYpHODaQTDp1CuzGxj8wVjvOwhLo3TEagdm6Eys69J0A9pXn8rTZSir2rQeSbEFvW6hGgYlVKC+MA7rWppP+e8KBTM1r03tV8hl6RvIwH+foPupkp6QlC+FBKzr05zpkZHPI/uTyCM/A2vYQFuyLaEB9VOQrEP9UC8MctB5StpuKTHk0MAUFRivu6NezmKrJ+keapiiCuMMksuolzOyc/bymyLtS/szl1FHzOC4hgK6Eit4CRmMOkhfSvxTyEHx2mqY0Pw9zDuISyx/F0fxFLctzedg+/Y6e56gCZjZASY4kse/ShO8ppv+V3mm7yx6xArECsQKxArECsQKxArECsQKxArECsQKxArECvxvK6BvGM9udyVtA4+3uPMnri4gDehmRNdVQvEr1ypPTf9LIo8lgC5VjcPnqRmLF/KUtF8SeQwBdCbFT+FtwWSXRl2/E+BMBNKd3AHGXsePun4/S8KA+AZ2cIQxOmK0A9OONTTGXtdvG3iGtk7fMEpmRZeOTO6gNylrPkHffX+Fjc+htoG2VOwD6BftFesreIIu1UyGeTTukvwHv8uwnsIBtK+2tH/l2S/DnTKhzW9hDfrEFqp0A9/KNgHfuuVTo/9fIed1KcJJ3yePoZ857mhDVQwa8K2hH8LwU2/09lCQSz5nIk/CxBq28P1s8Z9XumbOI9sUfEv3U+/0ckGemrZfSgoZqMJjpV96C6Y/8uUK9msoYKwaDPegg46W7J2f/MeqwHDdl+Tsyesywtkwn4EFSf84S/rVG6hAv3xJO1vkSXDOwIL6Kejp169eO0ry5PS/JHJlBLBgHP7pf2HcQAk6U00b9Scq8DdqEfrKo4jnpQAAAABJRU5ErkJggg=="/>
+                            </defs>
+                          </svg>
+                            
+                        <h4>41%</h4>
+                        <p>Humidity</p>
+                        <svg width="58" height="58" class="img-status svg-icon" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="58" height="58" fill="url(#pattern0_17_217)"/>
+                            <defs>
+                            <pattern id="pattern0_17_217" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_217" transform="scale(0.015625)"/>
+                            </pattern>
+                            <image id="image0_17_217" width="64" height="64" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                            </svg>
+                            
+                        <h4>997hPa</h4>
+                        <p>Pressure</p>
+                    </div>
+                    <div class="col-lg-2 col-sm-2 col-6">
+                        <svg width="60" height="60" class="imgs-status svg-icon"  viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="60" height="59.2405" fill="url(#pattern0_17_222)"/>
+                            <defs>
+                            <pattern id="pattern0_17_222" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_222" transform="scale(0.0126582 0.0128205)"/>
+                            </pattern>
+                            <image id="image0_17_222" width="79"  height="78" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                            </svg>
+                            
+                            
+                            
+                        <h4>2km/h</h4>
+                        <p>Wind</p>
+                        <svg width="58" class="imgs-status_ svg-icon" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="58" height="58" fill="url(#pattern0_17_212)"/>
+                            <defs>
+                            <pattern id="pattern0_17_212" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_212" transform="scale(0.015625)"/>
+                            </pattern>
+                            <image id="image0_17_212" width="64" height="64" xlink:href="data:image/png;base64,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"/>
+                            </defs>
+                            </svg>                            
+                        <h4>8</h4>
+                        <p>UV</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row second-row justify-content-center">
+            <div class="days-forecast col-sm-3">
+                <h3 class="mt-3 mb-3">5 Days Forecast:</h3>
+                <div class="row">
+                   <div class="container justify-content-center mb-2">
+                    <img src="image/sun-svgrepo-com (2).svg" alt="Icon"> <span>27</span>
+                        <span>Friday, 1 Sep</span>
+                   </div>
+                   <div class="container justify-content-center mb-2">
+                    <img src="image/sun-svgrepo-com (2).svg" alt="Icon"> <span>27</span>
+                        <span>Friday, 1 Sep</span>
+                   </div>
+                   <div class="container justify-content-center mb-2">
+                    <img src="image/sun-svgrepo-com (2).svg" alt="Icon"> <span>27</span>
+                        <span>Friday, 1 Sep</span>
+                   </div>
+                   <div class="container justify-content-center mb-2">
+                    <img src="image/sun-svgrepo-com (2).svg" alt="Icon"> <span>27</span>
+                        <span>Friday, 1 Sep</span>
+                   </div>
+                   <div class="container justify-content-center mb-2">
+                    <img src="image/sun-svgrepo-com (2).svg" alt="Icon"> <span>27</span>
+                        <span>Friday, 1 Sep</span>
+                   </div>
+                   
+                </div>
+            </div>
+            <div class="forecast-box col-sm-8 col-12 mb-5 ">
+                <h1 class="text-center mt-4">Hourly Forecast</h1>
+                <div class="row justify-content-center">
+                    <div class="text-center forecast-hourly col-sm-1 col-3">
+                        <p class="mb-1 mt-3">12:00</p>
+                        <img src="image/sun-svgrepo-com (2).svg" class="img-suns mb-2">
+                        <p class="mb-1">26<span class="degrees-celsius-2">°C</span></p>
+                        <svg width="55" class="wind-direction" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="55" height="55" fill="url(#pattern0_17_175)"/>
+                            <defs>
+                            <pattern id="pattern0_17_175" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_175" transform="scale(0.0208333)"/>
+                            </pattern>
+                            <image id="image0_17_175" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5klEQVR4nO2RvUoDQRRGF7GwSy+IubHMKwgGUlvaprS1ThVLq8wNZkZSCUIamxQ+wDYp3DFtXsFKBHeU7CiygkSJcTc7O7O/sN8DXO45x7KqVatWLWzkYdHavxItq6xDR9pAXdsqq33k0gcm/FJWQEfaPwClq0CW9n8BylYBl/ZXAUpTgazY/wNQlgq4Yn8doPAVyJr9fwBFr4Br9oMACluBBNgPBChqBQywHwZQuAokxH4oQNEqYIj9TQCFqUA22N8IUJQKuMF+FADkXSHKfiQAy7lClH0VAMirgop9JQCWUwUV+6oAkHUFVfvKACzjCqr24wBAVhXi2I8FwDKqEMd+XABIu0Jc+7EBWMoV4trXAYC0KujY1wJgKVXQsa8LAElX0LWvDcASrqBr3wQAkqpgYt8IgCVUwcS+KQCYVjC1bwzADCuY2k8CAHQr6Nn3XHS8KXI5IPey0+eLxt7l2y7Ql2Og4rxOxR0w8ZRJBYy0730QLufE8W4G/P2078hmz/e3VG5/QzFxAtQd1KmYAnUXiVYItO/IR+TyFrl3hrP3w2vb37ES2lHP3z4YimadvnaAiRFQMQfmfmpXINwbI5cTwr0uOov2xcyvWRmvMXquNYaiDdTtAhOTOnXHWf9QrVo1K/19Af9KAeOOy4JzAAAAAElFTkSuQmCC"/>
+                            </defs>
+                            </svg>
+                            
+                        <p class="mt-3">3km/h</p>
+                    </div>
+                    <div class="text-center forecast-hourly col-sm-1 col-3">
+                        <p class="mb-1 mt-3">15:00</p>
+                        <img src="image/sun-svgrepo-com (2).svg" class="img-suns mb-2">
+                        <p class="mb-1">27<span class="degrees-celsius-2">°C</span></p>
+                        <svg width="55" class="wind-direction" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="55" height="55" fill="url(#pattern0_17_175)"/>
+                            <defs>
+                            <pattern id="pattern0_17_175" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_175" transform="scale(0.0208333)"/>
+                            </pattern>
+                            <image id="image0_17_175" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5klEQVR4nO2RvUoDQRRGF7GwSy+IubHMKwgGUlvaprS1ThVLq8wNZkZSCUIamxQ+wDYp3DFtXsFKBHeU7CiygkSJcTc7O7O/sN8DXO45x7KqVatWLWzkYdHavxItq6xDR9pAXdsqq33k0gcm/FJWQEfaPwClq0CW9n8BylYBl/ZXAUpTgazY/wNQlgq4Yn8doPAVyJr9fwBFr4Br9oMACluBBNgPBChqBQywHwZQuAokxH4oQNEqYIj9TQCFqUA22N8IUJQKuMF+FADkXSHKfiQAy7lClH0VAMirgop9JQCWUwUV+6oAkHUFVfvKACzjCqr24wBAVhXi2I8FwDKqEMd+XABIu0Jc+7EBWMoV4trXAYC0KujY1wJgKVXQsa8LAElX0LWvDcASrqBr3wQAkqpgYt8IgCVUwcS+KQCYVjC1bwzADCuY2k8CAHQr6Nn3XHS8KXI5IPey0+eLxt7l2y7Ql2Og4rxOxR0w8ZRJBYy0730QLufE8W4G/P2078hmz/e3VG5/QzFxAtQd1KmYAnUXiVYItO/IR+TyFrl3hrP3w2vb37ES2lHP3z4YimadvnaAiRFQMQfmfmpXINwbI5cTwr0uOov2xcyvWRmvMXquNYaiDdTtAhOTOnXHWf9QrVo1K/19Af9KAeOOy4JzAAAAAElFTkSuQmCC"/>
+                            </defs>
+                            </svg>
+                            
+                        <p class="mt-3">2km/h</p>
+                    </div>
+                    <div class="text-center forecast-hourly col-sm-1 col-3">
+                        <p class="mb-1 mt-3">18:00</p>
+                        <img src="image/sun-svgrepo-com (2).svg" class="img-suns mb-2">
+                        <p class="mb-1">25<span class="degrees-celsius-2">°C</span></p>
+                        <svg width="55" class="wind-direction" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="55" height="55" fill="url(#pattern0_17_175)"/>
+                            <defs>
+                            <pattern id="pattern0_17_175" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_175" transform="scale(0.0208333)"/>
+                            </pattern>
+                            <image id="image0_17_175" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5klEQVR4nO2RvUoDQRRGF7GwSy+IubHMKwgGUlvaprS1ThVLq8wNZkZSCUIamxQ+wDYp3DFtXsFKBHeU7CiygkSJcTc7O7O/sN8DXO45x7KqVatWLWzkYdHavxItq6xDR9pAXdsqq33k0gcm/FJWQEfaPwClq0CW9n8BylYBl/ZXAUpTgazY/wNQlgq4Yn8doPAVyJr9fwBFr4Br9oMACluBBNgPBChqBQywHwZQuAokxH4oQNEqYIj9TQCFqUA22N8IUJQKuMF+FADkXSHKfiQAy7lClH0VAMirgop9JQCWUwUV+6oAkHUFVfvKACzjCqr24wBAVhXi2I8FwDKqEMd+XABIu0Jc+7EBWMoV4trXAYC0KujY1wJgKVXQsa8LAElX0LWvDcASrqBr3wQAkqpgYt8IgCVUwcS+KQCYVjC1bwzADCuY2k8CAHQr6Nn3XHS8KXI5IPey0+eLxt7l2y7Ql2Og4rxOxR0w8ZRJBYy0730QLufE8W4G/P2078hmz/e3VG5/QzFxAtQd1KmYAnUXiVYItO/IR+TyFrl3hrP3w2vb37ES2lHP3z4YimadvnaAiRFQMQfmfmpXINwbI5cTwr0uOov2xcyvWRmvMXquNYaiDdTtAhOTOnXHWf9QrVo1K/19Af9KAeOOy4JzAAAAAElFTkSuQmCC"/>
+                            </defs>
+                            </svg>
+                            
+                        <p class="mt-3">2km/h</p>
+                    </div>
+                    <div class="text-center forecast-hourly col-sm-1 col-3">
+                        <p class="mb-1 mt-3">21:00</p>
+                        <img src="image/sun-svgrepo-com (2).svg" class="img-suns mb-2">
+                        <p class="mb-1">22<span class="degrees-celsius-2">°C</span></p>
+                        <svg width="55" class="wind-direction" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="55" height="55" fill="url(#pattern0_17_175)"/>
+                            <defs>
+                            <pattern id="pattern0_17_175" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_175" transform="scale(0.0208333)"/>
+                            </pattern>
+                            <image id="image0_17_175" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5klEQVR4nO2RvUoDQRRGF7GwSy+IubHMKwgGUlvaprS1ThVLq8wNZkZSCUIamxQ+wDYp3DFtXsFKBHeU7CiygkSJcTc7O7O/sN8DXO45x7KqVatWLWzkYdHavxItq6xDR9pAXdsqq33k0gcm/FJWQEfaPwClq0CW9n8BylYBl/ZXAUpTgazY/wNQlgq4Yn8doPAVyJr9fwBFr4Br9oMACluBBNgPBChqBQywHwZQuAokxH4oQNEqYIj9TQCFqUA22N8IUJQKuMF+FADkXSHKfiQAy7lClH0VAMirgop9JQCWUwUV+6oAkHUFVfvKACzjCqr24wBAVhXi2I8FwDKqEMd+XABIu0Jc+7EBWMoV4trXAYC0KujY1wJgKVXQsa8LAElX0LWvDcASrqBr3wQAkqpgYt8IgCVUwcS+KQCYVjC1bwzADCuY2k8CAHQr6Nn3XHS8KXI5IPey0+eLxt7l2y7Ql2Og4rxOxR0w8ZRJBYy0730QLufE8W4G/P2078hmz/e3VG5/QzFxAtQd1KmYAnUXiVYItO/IR+TyFrl3hrP3w2vb37ES2lHP3z4YimadvnaAiRFQMQfmfmpXINwbI5cTwr0uOov2xcyvWRmvMXquNYaiDdTtAhOTOnXHWf9QrVo1K/19Af9KAeOOy4JzAAAAAElFTkSuQmCC"/>
+                            </defs>
+                            </svg>
+                            
+                        <p class="mt-3">3km/h</p>
+                    </div>
+                    <div class="text-center forecast-hourly col-sm-1 col-3">
+                        <p class="mb-1 mt-3">00:00</p>
+                        <img src="image/sun-svgrepo-com (2).svg" class="img-suns mb-2">
+                        <p class="mb-1">29<span class="degrees-celsius-2">°C</span></p>
+                        <svg width="55" class="wind-direction" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="55" height="55" fill="url(#pattern0_17_175)"/>
+                            <defs>
+                            <pattern id="pattern0_17_175" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_17_175" transform="scale(0.0208333)"/>
+                            </pattern>
+                            <image id="image0_17_175" width="48" height="48" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB5klEQVR4nO2RvUoDQRRGF7GwSy+IubHMKwgGUlvaprS1ThVLq8wNZkZSCUIamxQ+wDYp3DFtXsFKBHeU7CiygkSJcTc7O7O/sN8DXO45x7KqVatWLWzkYdHavxItq6xDR9pAXdsqq33k0gcm/FJWQEfaPwClq0CW9n8BylYBl/ZXAUpTgazY/wNQlgq4Yn8doPAVyJr9fwBFr4Br9oMACluBBNgPBChqBQywHwZQuAokxH4oQNEqYIj9TQCFqUA22N8IUJQKuMF+FADkXSHKfiQAy7lClH0VAMirgop9JQCWUwUV+6oAkHUFVfvKACzjCqr24wBAVhXi2I8FwDKqEMd+XABIu0Jc+7EBWMoV4trXAYC0KujY1wJgKVXQsa8LAElX0LWvDcASrqBr3wQAkqpgYt8IgCVUwcS+KQCYVjC1bwzADCuY2k8CAHQr6Nn3XHS8KXI5IPey0+eLxt7l2y7Ql2Og4rxOxR0w8ZRJBYy0730QLufE8W4G/P2078hmz/e3VG5/QzFxAtQd1KmYAnUXiVYItO/IR+TyFrl3hrP3w2vb37ES2lHP3z4YimadvnaAiRFQMQfmfmpXINwbI5cTwr0uOov2xcyvWRmvMXquNYaiDdTtAhOTOnXHWf9QrVo1K/19Af9KAeOOy4JzAAAAAElFTkSuQmCC"/>
+                            </defs>
+                            </svg>
+                            
+                        <p class="mt-3">3km/h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

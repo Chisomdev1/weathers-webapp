@@ -1,0 +1,282 @@
+  body {
+    font-family: "Poppins", sans-serif !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.dark-mode {
+    background-color: #373636;
+    color: white;
+}
+
+.toggle-container {
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 34px;
+    margin-bottom: 8px; /* Space between the toggle and the label */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+
+.svg-icon {
+    fill: black;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    .svg-icon {
+      fill: white;
+    }
+  }
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 6px;
+    bottom: 4px;
+    background-color: black;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: white;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+
+
+.sunset-info{
+    margin: auto !important;
+}
+
+#modeLabel {
+    font-size: 14px;
+    text-align: center;
+    margin-left: 13px;
+}
+.row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to ensure elements stay in one line */
+    align-items: flex-start; /* Align items to the top of the row */
+}
+
+.col-lg-3, .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the column */
+    text-align: left; /* Ensure text aligns to the left */
+}
+
+.toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align toggle and label to the start of the column */
+}
+
+.switch {
+    margin-bottom: 8px; /* Space between the toggle and the label */
+}
+
+
+
+.container{
+    width: 100% !important;
+    justify-content: center;
+}
+.first-row{
+    height: 100% !important;
+}
+
+.time-box {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: #353434;
+    vertical-align: middle !important;
+    border-radius: 15px;
+    margin: 10px 17px;
+}
+
+#container {
+    display: flex; /* Use flexbox to arrange elements in a row */
+    align-items: center; /* Vertically align elements in the center */
+  }
+  
+  img {
+    /* Add styling for the icon here */
+    width: 40px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 5px; /* Add spacing between the icon and text */
+  }
+  
+  span {
+    /* Add styling for the text here */
+    font-size: 17px;
+    margin-right: 10px; /* Add spacing between the numbers and date */
+  }
+.search-info{
+    width: 100% !important;
+}
+.info-box {
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    margin: 10px auto !important;
+    width: 100%;
+}
+.temperature{
+    font-weight: bold;
+    font-size: 45px
+}
+.forecast-box{
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.4);
+    align-self: center;
+}
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.btn {
+    background-color: green !important;
+    color: white !important;
+    border-radius: 100px !important;
+    width: 100%;
+    margin: auto;
+}
+.current-btn{
+    font-size: 100% !important;
+    height: 30px;
+    color: white !important;
+}
+.sun-info-text{
+    fill: white !important;
+}
+.sun-info-text.light-mode{
+    fill: #000000 !important;
+}
+.img-sun{
+    width: 75%;
+    margin-bottom: 30px !important;
+}
+
+.img-status{
+    margin: 5px ;
+    width: 50% !important;
+    color: white;
+}
+.imgs-status{
+    margin: 1px ;
+    width: 50% !important;
+    color: white;
+}
+.imgs-status_{
+    margin: 5px ;
+    width: 50% !important;
+    color: white;
+}
+.img-suns{
+    width: 50%;
+    color: yellow !important;
+}
+.searched-country{
+    margin-bottom: 55px;
+    margin-top: 45px;
+}
+
+.searched-date{
+    margin-bottom: 65px;
+}
+
+
+.forms.light-mode{
+    border: 1px solid black !important;
+}
+.forms{
+    width: 100% !important;
+    margin-left: 20px !important;
+    height: 39px;
+    border-radius: 35px;
+    padding-left: 15px;
+}
+
+.searched-time{
+    font-size: 55px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.degrees-fahrenheit {
+    color: red;
+}
+.kelvin {
+    color: green;
+}
+.degrees-celsius, .degrees-fahrenheit, .kelvin {
+    font-size: 43px;
+}
+.forecast-hourly{
+    padding: 100px auto !important;
+    background-color: black;
+    border-radius: 20px;
+    margin-left: 3%;
+    margin-bottom: 30px;
+}
+.wind-direction{
+    width: 30px;
+    margin: 0px !important;
+}
+.second-row{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px !important;
+}
+.days-forecast{
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding-left: 60px !important;
+    width: 90%;
+    margin: 0px auto !important;
+}
+
+@media only screen and (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .second-row {
+      margin-left: 50px !important;
+    }
+    .info-box{
+        margin-left: 9px !important; 
+    }
+    .forecast-box{
+        margin-top: 40px !important;
+    }
+  }
