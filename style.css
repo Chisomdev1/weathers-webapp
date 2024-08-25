@@ -211,8 +211,9 @@
   }
 
   .img-sun {
-      width: 90% !important;
-      margin-bottom: 0px !important;
+      width: 100% !important;
+      margin-top: 20px !important;
+      margin-bottom: 150px !important;
   }
 
   .img-status {
@@ -322,23 +323,26 @@
           display: flex;
           justify-content: center;
           margin-top: 20px !important;
+          width: 100% !important;
+      }
+      
+      .info-box{
+        margin: 0px !important;
+        max-width: 100% !important;
+        padding-top: 20px;
       }
 
-      .info-sub {
-          margin: 0px !important;
-          width: 90% !important;
-      }
-
-      .first-row {
-          display: flex;
-          justify-content: center;
-          margin-top: 20px !important;
-      }
-
+      
       body {
           padding: auto !important;
           justify-content: center !important;
-          max-width: 350px !important;
+        
+      }
+      .sunset-info{
+        display: inline;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1px;
+        width: 40px;
       }
 
       .forms {
@@ -348,4 +352,18 @@
       .search-info {
           padding-left: 30px !important;
       }
+      .second-row{
+        width: 100% !important;
+      }
+      
+  .img-sun {
+    width: 100% !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+    margin-left: 20px !important;
+   }
+   .condition{
+    margin-left: 40px !important;
+    margin-bottom: 40px !important;
+   }
   }
